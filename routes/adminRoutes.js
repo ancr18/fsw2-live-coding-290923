@@ -3,18 +3,30 @@ const adminController = require("../controllers/adminController")
 
 const router = express.Router()
 
-router.route("/").get(adminController.getAllTours)
+// api function for render page
+router
+  .route("/dashboard")
+  .get(adminController.toursPage)
 
 router
-  .route("/create")
+  .route("/dashboard/create")
   .get(adminController.createPage)
 
-// router
-//   .route("/edit")
-//   .get(adminController.editPage)
+router
+  .route("/dashboard/edit/:id")
+  .get(adminController.editPage)
+
+// api function for action
+router
+  .route("/tours/add")
+  .post(adminController.createTour)
 
 router
-  .route("/action")
-  .post(adminController.createTour)
+  .route("/tours/delete/:id")
+  .post(adminController.removeTour)
+
+router
+  .route("/tours/update/:id")
+  .post(adminController.editTour)
 
 module.exports = router

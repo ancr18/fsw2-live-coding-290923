@@ -43,6 +43,6 @@ app.use((req, res, next) => {
 
 app.use("/api/v1/tours", tourRouter)
 app.use("/api/v1/users", userRouter)
-app.use("/dashboard", adminRouter)
+app.use("/", adminRouter)
 
 module.exports = app

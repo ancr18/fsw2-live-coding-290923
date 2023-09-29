@@ -535,6 +535,9 @@ pre code {
   background: #73ca5c;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 16px;
 }
 .alert-dark {
   align-items: center;
@@ -542,4 +545,7 @@ pre code {
   height: 48px;
   background: #151515;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 16px;
 }
