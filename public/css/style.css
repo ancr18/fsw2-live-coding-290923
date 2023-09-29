@@ -523,3 +523,23 @@ pre code {
   margin: 0;
   padding: 0;
 }
+
+.d-none {
+  display: none;
+}
+
+.alert-success {
+  align-items: center;
+  width: 550px;
+  height: 48px;
+  background: #73ca5c;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+.alert-dark {
+  align-items: center;
+  width: 550px;
+  height: 48px;
+  background: #151515;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+}

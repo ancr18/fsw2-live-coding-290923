@@ -3,7 +3,8 @@
 // THIRD PARTY PACKAGE/MODULE
 const express = require("express")
 const morgan = require("morgan")
-var bodyParser = require("body-parser")
+const flash = require("connect-flash")
+const session = require("express-session")
 
 // OUR OWN PACKAGE/MODULE
 const tourRouter = require("./routes/tourRoutes")
@@ -23,6 +24,17 @@ app.use(express.static(`${__dirname}/public`))
 app.set("views", __dirname + "/views")
 app.set("view engine", "ejs")
 
+// flash and express session for notification
+app.use(
+  session({
+    secret: "geeksforgeeks",
+    saveUninitialized: true,
+    resave: true,
+  })
+)
+app.use(flash())
+
+// our own middleware example
 app.use((req, res, next) => {
   req.requestTime = new Date().toISOString()
   console.log(req.requestTime)

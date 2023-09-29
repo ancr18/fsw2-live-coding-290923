@@ -14,7 +14,11 @@
   </head>
   <body>
     <h1>Hello FSW2</h1>
-    <p><%= tours %></p>
+    <% if (message != '') { %>
+      <div class="alert <%= (message == 'Ditambah' ? "alert-success" :"alert-dark") %>" role="alert">
+        Data Berhasil <%= message %>
+      </div>
+    <% } %>
     <table>
       <th>id</th>
       <th>nama</th>

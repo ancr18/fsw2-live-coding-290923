@@ -1,4 +1,3 @@
-const fs = require("fs")
 const Tour = require("../models/tourModel")
 
 const getAllTours = async (req, res) => {
@@ -6,6 +5,7 @@ const getAllTours = async (req, res) => {
     const tours = await Tour.find()
     res.render("tours/index.ejs", {
       tours,
+      message: req.flash("message", ""),
     })
   } catch (err) {
     res.status(400).json({
@@ -17,7 +17,9 @@ const getAllTours = async (req, res) => {
 
 const createPage = async (req, res) => {
   try {
-    res.render("tours/create.ejs")
+    res.render("tours/create.ejs", {
+      messages: req.flash("message", "Ditambah"),
+    })
   } catch (err) {
     res.status(400).json({
       status: "failed",
@@ -28,7 +30,7 @@ const createPage = async (req, res) => {
 
 const createTour = async (req, res) => {
   try {
-    console.log(req.body)
+    req.flash
     await Tour.create(req.body)
     res.redirect("/dashboard")
   } catch (err) {
