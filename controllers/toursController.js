@@ -21,7 +21,12 @@ const createTour = async (req, res) => {
 
 const getAllTours = async (req, res) => {
   try {
+
+    const {price, name} = req.query
+    const condition = {}
+    if(price) condition.price = {$gt: req.}
     const tours = await Tour.find()
+
     res.status(200).json({
       status: "success",
       requestTime: req.requestTime,
