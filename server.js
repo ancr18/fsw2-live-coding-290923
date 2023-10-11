@@ -16,7 +16,5 @@ mongoose
   .catch((err) => "error db")
 
 app.listen(port, () => {
-  console.log(
-    `App running on port localhost:${port} ...`
-  )
+  console.log(`App running on port localhost:${port} ...`)
 })

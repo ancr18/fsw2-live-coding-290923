@@ -1,6 +1,7 @@
 const Tour = require("../models/tourModel")
 
 const toursPage = async (req, res) => {
+  
   try {
     console.log(req.query)
     const { price, name, rating } = req.query

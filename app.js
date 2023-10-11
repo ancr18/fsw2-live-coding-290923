@@ -1,5 +1,3 @@
-// CORE PACKAGE/MODULE
-
 // THIRD PARTY PACKAGE/MODULE
 const express = require("express")
 const morgan = require("morgan")
